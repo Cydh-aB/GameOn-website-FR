@@ -26,34 +26,31 @@ closeModal[0].addEventListener("click", function() {
   modalbg.style.display = "none";
 });
 
+
 document.forms["reserve"].addEventListener("submit", function(e) {
 	 
-  var erreur;
   var erreurVille;
-  var erreurPrenom;
-  var erreurNom;
-  var erreurMail;
-  
+  var erreur;
   var inputs = this;
 
   if (inputs["first"].value == "" || inputs["first"].length < 2) {
-    erreurPrenom = "Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
-    document.getElementById("first_erreur").innerHTML = erreurPrenom;
+    erreur = "Veuillez entrer 2 caractères ou plus pour le champ du Prénom.";
+    document.getElementById("first_erreur").innerHTML = erreur;
   }
 
   if (inputs["last"].value == "" || inputs["last"].length < 2) {
-    erreurPrenom = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
-    document.getElementById("last_erreur").innerHTML = erreurPrenom;
+   erreur = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    document.getElementById("last_erreur").innerHTML = erreur;
   }
 
   if (inputs["email"].value == "") {
-    erreurPrenom = "Veuillez renseigner votre adresse email.";
-    document.getElementById("email_erreur").innerHTML = erreurPrenom;
+   erreur = "Veuillez renseigner votre adresse email.";
+    document.getElementById("email_erreur").innerHTML = erreur;
   }
 
   if (inputs["birthdate"].value == "") {
-    erreurPrenom = "Vous devez entrer votre date de naissance.";
-    document.getElementById("birthdate_erreur").innerHTML = erreurPrenom;
+    erreur = "Vous devez entrer votre date de naissance.";
+    document.getElementById("birthdate_erreur").innerHTML = erreur;
   }
 
 
@@ -63,8 +60,13 @@ document.forms["reserve"].addEventListener("submit", function(e) {
       erreurVille = "Veuillez saisir une option.";
       document.getElementById("location_erreur").innerHTML = erreurVille;
     }
-  
-  if (erreur || erreurVille || erreurPrenom) {
+    
+  if (inputs["checkbox1"].checked == false) {
+    erreur = "Vous devez vérifier que vous acceptez les termes et conditions.";
+    document.getElementById("checkbox1_erreur").innerHTML = erreur;
+  } 
+
+  if (erreur) {
     e.preventDefault();
     return false;
   } else {
@@ -77,7 +79,10 @@ function removeWarning() {
   document.getElementById(this.id + "_erreur").innerHTML = "";
 }
 
+
 document.getElementById("first").onkeyup = removeWarning;
 document.getElementById("last").onkeyup = removeWarning;
 document.getElementById("email").onkeyup = removeWarning;
 document.getElementById("birthdate").onclick = removeWarning;
+document.getElementById("checkbox1").onclick = removeWarning;
+
