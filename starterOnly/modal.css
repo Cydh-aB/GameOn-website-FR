@@ -183,6 +183,27 @@ main {
   padding-top: 10px;
 }
 
+/** Ajout du message d'inscription validée**/
+
+#msg_validation {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 837px;
+  display: none;
+  text-align: center;
+}
+
+#msg_validation p {
+  margin-top: 70%;
+  margin-bottom: 70%;
+  font-size: 36px;
+}
+
+#btn_fermer {
+  margin-bottom: 2%;
+}
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;

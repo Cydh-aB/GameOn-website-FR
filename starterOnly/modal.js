@@ -12,6 +12,8 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeModal = document.getElementsByClassName("close");
+const modalBody = document.getElementsByClassName("modal-body");
+const btnClose = document.getElementById("btn_fermer");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -26,8 +28,13 @@ closeModal[0].addEventListener("click", function() {
   modalbg.style.display = "none";
 });
 
+// Bouton fermeture modale - reload page
+btnClose.addEventListener("click", function() {
+  location.reload();
+});
 
-document.forms["reserve"].addEventListener("submit", function(e) {
+
+document.forms["reserve"].addEventListener("submit", function(validate) {
 	 
   var erreurVille;
   var erreur;
@@ -53,7 +60,6 @@ document.forms["reserve"].addEventListener("submit", function(e) {
     document.getElementById("birthdate_erreur").innerHTML = erreur;
   }
 
-
   if (document.querySelector('input[name="location"]:checked')){
     console.log("valeur radio"+document.querySelector('input[name="location"]:checked').value);
     } else {
@@ -67,22 +73,22 @@ document.forms["reserve"].addEventListener("submit", function(e) {
   } 
 
   if (erreur) {
-    e.preventDefault();
+    validate.preventDefault();
     return false;
   } else {
-    alert('Formulaire envoyé !');
+    document.getElementById("msg_validation").style.display = "block";
+    document.getElementById("form").style.display = "none"; 
   }
  
 });
- 
+
+
 function removeWarning() {
   document.getElementById(this.id + "_erreur").innerHTML = "";
 }
-
 
 document.getElementById("first").onkeyup = removeWarning;
 document.getElementById("last").onkeyup = removeWarning;
 document.getElementById("email").onkeyup = removeWarning;
 document.getElementById("birthdate").onclick = removeWarning;
 document.getElementById("checkbox1").onclick = removeWarning;
-

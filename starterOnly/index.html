@@ -56,12 +56,18 @@
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
+
+            <div id="msg_validation">
+              <p>Merci ! Votre réservation à été reçue.</p>
+              <input id="btn_fermer" type="button" class="button btn-submit" value="Fermer"/>
+            </div>
+
             <form
               id="form"
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="return false;"
             >
               <div
                 class="formData">
