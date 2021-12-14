@@ -7,6 +7,7 @@ function editNav() {
   }
 }
 
+
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -33,6 +34,7 @@ btnClose.addEventListener("click", function() {
   location.reload();
 });
 
+// Validation du formulaire
 
 document.forms["reserve"].addEventListener("submit", function(validate) {
 	 
@@ -82,6 +84,7 @@ document.forms["reserve"].addEventListener("submit", function(validate) {
  
 });
 
+// Retrait dynamique du message d'erreur
 
 function removeWarning() {
   document.getElementById(this.id + "_erreur").innerHTML = "";
@@ -92,3 +95,4 @@ document.getElementById("last").onkeyup = removeWarning;
 document.getElementById("email").onkeyup = removeWarning;
 document.getElementById("birthdate").onclick = removeWarning;
 document.getElementById("checkbox1").onclick = removeWarning;
+
