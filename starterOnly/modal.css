@@ -547,6 +547,14 @@ footer {
   }
 }
 @media screen and (max-width: 450px) {
+  .hero-section {
+    min-height: 0;
+  }
+
+  .hero-section > .btn-signup {
+    padding: 8px 35px;
+    font-size: 14px;
+  }
 
   .topnav {
     margin: 1rem 28px 10px;
@@ -569,6 +577,10 @@ footer {
     font-size: 13px;
     margin-top: 20px;
     max-width: 357px;
+  }
+
+  .copyrights {
+    margin: 0;
   }
 }
 @keyframes modalopen {
