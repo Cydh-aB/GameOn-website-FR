@@ -546,6 +546,8 @@ footer {
     text-align: center;
   }
 }
+
+
 @media screen and (max-width: 450px) {
   .hero-section {
     min-height: 0;
@@ -581,6 +583,38 @@ footer {
 
   .copyrights {
     margin: 0;
+  }
+
+  /**Modifications formulaire responsive**/
+
+  .content {
+    height: 680px;
+  }
+
+  #location_erreur {
+    font-size: 13px;
+  }
+
+  .bground {
+    top: 35px;
+    background-color: transparent;
+  }
+
+  label {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .modal-body {
+    margin: 0;
+  }
+  
+  .btn-submit, .btn-signup {
+    margin-top: 20px;
+  }
+
+  .formData p {
+    font-size: 13px;
   }
 }
 @keyframes modalopen {
