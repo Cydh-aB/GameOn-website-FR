@@ -102,8 +102,16 @@ img {
     margin-top: -15px;
     left: 82%;
     color: #FF001B;
+    text-align: center;
+    top: 35px;
   }
   .topnav a.icon:hover{
+    color: #ffffff;
+  }
+
+  .topnav.responsive .icon {
+    right: 0;
+    top: 20px;
     color: #ffffff;
   }
 } 
@@ -562,6 +570,16 @@ footer {
     margin: 1rem 28px 10px;
   }
 
+  .topnav.responsive .icon {
+    top: 5px;
+  }
+
+  .topnav a.icon {
+    margin-top: 0;
+    left: 81%;
+    top: 2px;
+  }
+
   img {
     padding-right: 0;
   }
@@ -616,7 +634,12 @@ footer {
   .formData p {
     font-size: 13px;
   }
+
+  #msg_validation p{
+    margin-bottom: 50%;
+  }
 }
+
 @keyframes modalopen {
   from {
     opacity: 0;
