@@ -198,6 +198,10 @@ main {
   padding-top: 10px;
 }
 
+.erreur {
+  font-size: 15px;
+}
+
 /** Ajout du message d'inscription validée**/
 
 #msg_validation {
@@ -476,6 +480,16 @@ input[data-error]::after {
   font-weight: normal;
   white-space: nowrap;
 }
+
+/** Modification H1 responsive **/
+
+@media screen and (max-width: 950px) {
+  
+  .hero-headline {
+    font-size: 5.1rem;
+  }
+}
+
 .hero-text {
   width: 146%;
   font-weight: normal;

@@ -15,6 +15,7 @@ const formData = document.querySelectorAll(".formData");
 const closeModal = document.getElementsByClassName("close");
 const modalBody = document.getElementsByClassName("modal-body");
 const btnClose = document.getElementById("btn_fermer");
+const submitBtn = document.getElementById("submit");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -22,6 +23,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  document.getElementById("iconMenu").style.pointerEvents = "none";
 }
 
 // Close window modal
@@ -38,7 +40,6 @@ btnClose.addEventListener("click", function() {
 
 document.forms["reserve"].addEventListener("submit", function(validate) {
 	 
-  var erreurVille;
   var erreur;
   var inputs = this;
 
@@ -65,8 +66,8 @@ document.forms["reserve"].addEventListener("submit", function(validate) {
   if (document.querySelector('input[name="location"]:checked')){
     console.log("valeur radio"+document.querySelector('input[name="location"]:checked').value);
     } else {
-      erreurVille = "Veuillez saisir une option.";
-      document.getElementById("location_erreur").innerHTML = erreurVille;
+      erreur = "Veuillez saisir une option.";
+      document.getElementById("location_erreur").innerHTML = erreur;
     }
     
   if (inputs["checkbox1"].checked == false) {
@@ -81,8 +82,10 @@ document.forms["reserve"].addEventListener("submit", function(validate) {
     document.getElementById("msg_validation").style.display = "block";
     document.getElementById("form").style.display = "none"; 
   }
- 
+
 });
+
+
 
 // Retrait dynamique du message d'erreur
 
