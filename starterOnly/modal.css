@@ -200,6 +200,7 @@ main {
 
 .erreur {
   font-size: 15px;
+  color: rgba(255, 0, 0, 0.747);
 }
 
 /** Ajout du message d'inscription validée**/
